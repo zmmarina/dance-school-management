@@ -8,58 +8,7 @@
 
         <h3>New Instructor</h3>
 
-        <div class="item">            
-            <div>Avatar URL</div>
-            <div>
-                <input 
-                type="url" 
-                name="avatar_url" 
-                placeholder="http://"
-                >
-            </div>
-        </div>
-
-        <div class="item">            
-            <div>Instructor</div>
-            <div>
-                <input 
-                type="text" 
-                name="name" 
-                placeholder="Inform the instructor's name"
-                >
-            </div>
-        </div>
-
-        <div class="item">
-            <div>Date of Birth</div>
-            <div>
-                <input 
-                type="date" 
-                name="birth" 
-                >
-            </div>
-        </div>
-
-        <div class="item">
-            <div>Gender</div>
-            <div>
-                <span><input type="radio" name="gender" value="M">Male</span>
-                <span><input type="radio" name="gender" value="F" checked>Female</span>
-            </div>
-        </div>
-
-        <div class="item">
-            <div>Modalities</div>
-            <div> 
-                <input 
-                type="text" 
-                name="services"
-                placeholder="Separate the modalities taught by a comma"
-                >
-            </div>
-        </div>
-        
-        <button type="submit">Save</button>
+        {% include "instructors/fields.njk" %}     
         
     </section>
 </form>
