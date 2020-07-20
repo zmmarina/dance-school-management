@@ -1,28 +1,12 @@
 {
   "instructors": [
     {
-      "id": "1",
-      "avatar_url": "http://google.com",
+      "id": 1,
+      "avatar_url": "https://source.unsplash.com/collection/2446638/500x500",
       "name": "Theo Lindo",
-      "birth": 950054400000,
+      "birth": 1486598400000,
       "gender": "M",
-      "services": "House, Free Style, Folkdance"
-    },
-    {
-      "id": 2,
-      "avatar_url": "http://google.com",
-      "name": "Theo Lindo",
-      "birth": 950054400000,
-      "gender": "M",
-      "services": "House, Free Style"
-    },
-    {
-      "id": 3,
-      "avatar_url": "http://google.com",
-      "name": "Theo Lindo",
-      "birth": 950054400000,
-      "gender": "M",
-      "services": "House, Free Style"
+      "services": "Free Style, Folkdance"
     }
   ]
 }
