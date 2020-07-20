@@ -1,0 +1,12 @@
+{
+  "instructors": [
+    {
+      "id": 1,
+      "avatar_url": "http://google.com",
+      "name": "Theo Lindo",
+      "birth": 950054400000,
+      "gender": "M",
+      "services": "House, Free Style"
+    }
+  ]
+}
