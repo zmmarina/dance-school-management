@@ -1,6 +1,6 @@
 const fs = require("fs");
 const data = require("../data.json");
-const { age, date } = require("../utils");
+const { date } = require("../utils");
 
 
 exports.index = function (req, res){
@@ -17,20 +17,20 @@ exports.post = function (req, res){
             return res.send("Please, fill all fields!");        
     }
 
-    let { avatar_url, birth, name, services, gender } = req.body;
+    
+    birth = Date.parse(req.body.birth);
 
-    birth = Date.parse(birth);
-    const created_at = Date.now();
-    const id = Number(data.students.length + 1);
+    let id = 1;
+    const lastStudent = data.students[data.students.length - 1];
+
+    if (lastStudent){
+        id = lastStudent.id + 1;
+    };
 
     data.students.push({
-        id,
-        avatar_url,
-        name,        
-        birth,           
-        gender,
-        services,  
-        avatar_url              
+        id,  
+        ... req.body,                    
+        birth                
     });
 
     fs.writeFile("data.json", JSON.stringify(data, null, 2), function(err){
@@ -40,7 +40,6 @@ exports.post = function (req, res){
 
     })
 
-    //return res.send (req.body);
 };
 
 exports.show = function (req, res){
@@ -56,8 +55,8 @@ exports.show = function (req, res){
   
     const student = {
         ...foundStudent,
-        age: age(foundStudent.birth),
-        
+        birth: date(foundStudent.birth).birthDay,
+        services: foundStudent.services.split(",")        
     }
 
     return res.render("students/show", { student });
