@@ -4,8 +4,9 @@ const { date } = require("../utils");
 
 
 exports.index = function (req, res){
-   
+  
     return res.render ("students/index", { students : data.students});
+    
 };
 
 exports.post = function (req, res){
@@ -78,7 +79,7 @@ exports.edit = function (req, res){
 
     const student = {
         ... foundStudent,
-        birth: date(foundStudent.birth)
+        birth: date(foundStudent.birth).iso
     }
 
     return res.render("students/edit", { student });
